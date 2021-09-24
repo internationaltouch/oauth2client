@@ -23,4 +23,4 @@ urlpatterns = [
     urls.url(r'oauth2authorize/', views.oauth2_authorize, name="authorize")
 ]
 
-urls = (urlpatterns, "google_oauth", "google_oauth")
+urls = (urlpatterns, "google_oauth")
