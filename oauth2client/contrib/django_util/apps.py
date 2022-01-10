@@ -28,5 +28,5 @@ if sys.hexversion >= 0x02070000:  # pragma: NO COVER
 
     class GoogleOAuth2HelperConfig(AppConfig):
         """ App Config for Django Helper"""
-        name = 'oauth2client.django_util'
+        name = 'oauth2client'
         verbose_name = "Google OAuth2 Django Helper"
