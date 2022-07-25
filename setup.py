@@ -17,31 +17,12 @@
 Also installs included versions of third party libraries, if those libraries
 are not already installed.
 """
-from __future__ import print_function
 
-import sys
-
-from setuptools import find_packages
-from setuptools import setup
+from setuptools import find_packages, setup
 
 import oauth2client
 
-if sys.version_info < (2, 7):
-    print('oauth2client requires python2 version >= 2.7.', file=sys.stderr)
-    sys.exit(1)
-if (3, 1) <= sys.version_info < (3, 4):
-    print('oauth2client requires python3 version >= 3.4.', file=sys.stderr)
-    sys.exit(1)
-
-install_requires = [
-    'httplib2>=0.9.1',
-    'pyasn1>=0.1.7',
-    'pyasn1-modules>=0.0.5',
-    'rsa>=3.1.4',
-    'six>=1.6.1',
-]
-
-long_desc = """
+long_description = """
 oauth2client is a client library for OAuth 2.0.
 
 Note: oauth2client is now deprecated. No more features will be added to the
@@ -53,27 +34,30 @@ Note: oauth2client is now deprecated. No more features will be added to the
 version = oauth2client.__version__
 
 setup(
-    name='oauth2client',
+    name="internationaltouch-oauth2client",
     version=version,
-    description='OAuth 2.0 client library',
-    long_description=long_desc,
-    author='Google Inc.',
-    author_email='jonwayne+oauth2client@google.com',
-    url='http://github.com/google/oauth2client/',
-    install_requires=install_requires,
-    packages=find_packages(exclude=('tests*',)),
-    license='Apache 2.0',
-    keywords='google oauth 2.0 http client',
+    description="OAuth 2.0 client library",
+    long_description=long_description,
+    author="Google Inc.",
+    author_email="jonwayne+oauth2client@google.com",
+    url="http://github.com/google/oauth2client/",
+    python_requires=">=3.6",
+    install_requires=[
+        "httplib2>=0.9.1",
+        "pyasn1>=0.1.7",
+        "pyasn1-modules>=0.0.5",
+        "rsa>=3.1.4",
+        "six>=1.6.1",
+    ],
+    packages=find_packages(exclude=("tests*",)),
+    license="Apache 2.0",
+    keywords="google oauth 2.0 http client",
     classifiers=[
-        'Programming Language :: Python :: 2',
-        'Programming Language :: Python :: 2.7',
-        'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.4',
-        'Programming Language :: Python :: 3.5',
-        'Development Status :: 7 - Inactive',
-        'Intended Audience :: Developers',
-        'License :: OSI Approved :: Apache Software License',
-        'Operating System :: POSIX',
-        'Topic :: Internet :: WWW/HTTP',
+        "Programming Language :: Python :: 3.6",
+        "Development Status :: 7 - Inactive",
+        "Intended Audience :: Developers",
+        "License :: OSI Approved :: Apache Software License",
+        "Operating System :: POSIX",
+        "Topic :: Internet :: WWW/HTTP",
     ],
 )
